@@ -1,0 +1,10 @@
+auto-save-list
+backups
+session.*
+network-security.data
+ido.last
+cider-history
+.recentf
+.smex-items
+projectile-bookmarks.eld
+projectile.cache
