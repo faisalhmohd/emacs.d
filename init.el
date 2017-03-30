@@ -173,3 +173,7 @@
 (menu-bar-mode -1)
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1)
+
+;; Setting commenting as shortcut
+
+(global-set-key (kbd "C-`") `comment-region)
