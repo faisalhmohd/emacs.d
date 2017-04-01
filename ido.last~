@@ -1,0 +1,36 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/faisal/Downloads/node-exam/" . "node-exam/")
+ ("/home/faisal/Downloads/" . "node-exam/")
+ ("/home/faisal/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/faisal/.emacs.d/"
+ "/home/faisal/Downloads/node-exam/node-exam/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "app.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/faisal/.emacs.d/" (22751 7257 602183 391000) "ido.last~" "init.el" "./" "init.el~" "../" ".git/" "session.105506c5d2d57f2b4a149095471134915000000006870025" ".gitignore" "recentf" "projectile-bookmarks.eld" "ido.last" ".recentf" "auto-save-list/" ".smex-items" "elpa/")
+
+ ("/home/faisal/" (22751 7469 264952 227000) ".pki/" ".npm/" ".ICEauthority" "Videos/" "Desktop/" ".local/" "Public/" "Documents/" ".gitconfig" ".gnupg/" "Downloads/" ".node_repl_history" "./" "../" ".python_history" ".gnome/" ".cache/" ".esd_auth" ".bashrc" ".bash_logout" "Work/" ".config/" "Pictures/" "Templates/" ".bash_history" ".bash_profile" "Music/" "Projects/" ".emacs.d/" ".ssh/")
+
+ ("/home/faisal/Downloads/" (22751 7501 985258 591000) "node-exam/" "PyOPUS-0.8.tar.gz" "PyOPUS-0.8/" "download/" "PyOPUS-doc-html-0.8.tar.gz" "NotoSansBengali-hinted.zip" "download.zip" "CV.pdf" "./" "challenge-01/" "../" "node-exam.tar.gz" "PyOPUS-doc-html-0.8/" "emacs-for-clojure-book1.zip" "emacs-for-clojure-book1/")
+
+ ("/home/faisal/Downloads/node-exam/node-exam/" (22751 8565 783985 832000) "._data" "._tags.txt" "./" "._.jshintrc" "../" "app.js" "data/" "README.md" "tags.txt" "._README.md" "app.js~" ".jshintrc")
+
+ ("/home/faisal/Downloads/node-exam/" (22750 34492 712895 996000) "node-exam/" "._node-exam" "./" "../")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
