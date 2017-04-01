@@ -9,3 +9,6 @@ cider-history
 projectile-bookmarks.eld
 projectile.cache
 elpa
+*~
+recentf
+.#recentf
