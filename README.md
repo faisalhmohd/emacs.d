@@ -9,7 +9,7 @@ This repo contains the source code to my Emacs configuration.
 
 ## Adding new packages
 
-1. Add your package in the list `(setq package-list `( .. <your_package_name>))`
+1. Add your package in the list `(setq package-list ( .. <your_package_name>))`
 2. `M-x [ret] eval-buffer [ret]` will reset the configuration and install any missing packages
 
 Enjoy!
