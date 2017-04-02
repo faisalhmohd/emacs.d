@@ -14,7 +14,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -104,10 +104,13 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; Enable ac-js2
-
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(setq ac-js2-evaluate-calls t)
+;; Enabling NodeJS REPL
+(add-to-list 'load-path "~/.emacs.d/")
+(load "node-js-repl.el")
+(require 'nodejs-repl)
 
 ;; Show Line Numbers
 (global-linum-mode t)
+
+;; Hiding startup splash screen
+(setq inhibit-startup-screen t)
