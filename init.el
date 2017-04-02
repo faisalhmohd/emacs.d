@@ -108,6 +108,7 @@
 ;; Enabling Yasnippet
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippet")
 (yas-global-mode 1)
 
 ;; Enabling Auto Complete
@@ -141,3 +142,6 @@
 
 ;; Prompt y and n instead of yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Setting Yas Expand
+(global-set-key (kbd "`") 'yas-expand)
