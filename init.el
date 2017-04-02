@@ -14,7 +14,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -42,7 +42,7 @@
     ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
  '(package-selected-packages
    (quote
-    (ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
+    (auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
  '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -90,16 +90,6 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-;; Syntax Highlighting for Browser languages.
-;; Formatting for JS and JSX 
-
-(require 'web-mode)
-(setq web-mode-content-types-alist
-  '(("jsx" . "\\.js[x]?\\'")))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(put 'upcase-region 'disabled nil)
-
 ;; Enable Markdown Mode
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -114,3 +104,37 @@
 
 ;; Hiding startup splash screen
 (setq inhibit-startup-screen t)
+
+;; Enabling Yasnippet
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;; Enabling Auto Complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; Setting ac-js2 and tern
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(if (eq system-type 'windows-nt)
+    (setq tern-command '("node" "\\usr\\local\\bin\\tern")))
+(eval-after-load 'tern
+    '(progn
+    (require 'tern-auto-complete)
+    (tern-ac-setup)))
+(add-hook 'js2-mode-hook 'tern-mode)
+(add-hook 'js-mode-hook 'tern-mode)
+
+;; Syntax Highlighting for Browser languages.
+;; Formatting for JS and JSX 
+(require 'web-mode)
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(put 'upcase-region 'disabled nil)
