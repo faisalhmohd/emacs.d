@@ -138,3 +138,6 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (put 'upcase-region 'disabled nil)
+
+;; Prompt y and n instead of yes and no
+(defalias 'yes-or-no-p 'y-or-n-p)
