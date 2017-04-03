@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: starter
+# key: bl
+# --
+
+import React, { Component } from 'react'
+
+export default class $1:name extends Component {
+       render() {
+       		return (
+		       <div>
+		       $2
+		       </div>
+		)
+       }
+}

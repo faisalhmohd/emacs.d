@@ -12,3 +12,7 @@ elpa
 *~
 recentf
 .#recentf
+**/\#*
+.#*
+tramp
+ac-comphist.dat
