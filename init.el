@@ -49,6 +49,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ (set-face-attribute 'default nil
+                    :height 140
+                    :weight 'normal
+                    :width 'normal)
  )
 
 ;; Load theme
@@ -144,7 +148,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Setting Yas Expand
-(global-set-key (kbd "`") 'yas-expand)
+(global-set-key [C-tab] 'yas-expand)
 
 ;; Enable Rainbow Delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
