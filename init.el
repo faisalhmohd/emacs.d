@@ -14,7 +14,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -42,7 +42,7 @@
     ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
  '(package-selected-packages
    (quote
-    (rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
+    (rainbow-mode rainbo-mode rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
  '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -156,3 +156,10 @@
 ;; Always display neotree and hidden files
 (setq-default neo-show-hidden-files t)
 (neotree-toggle)
+
+;; Enable Rainbow mode globally
+(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+
+(my-global-rainbow-mode 1)
+
