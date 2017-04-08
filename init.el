@@ -152,3 +152,7 @@
 ;; Adding all-the-icons
 (require 'all-the-icons)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+;; Always display neotree and hidden files
+(setq-default neo-show-hidden-files t)
+(neotree-toggle)
