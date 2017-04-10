@@ -187,4 +187,4 @@
 
 ;; Enable enwrapping highlight
 (show-paren-mode 1)
-
+(setq web-mode-enable-current-element-highlight t)
