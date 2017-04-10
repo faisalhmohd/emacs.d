@@ -183,6 +183,8 @@
 ;; Enable Rainbow mode globally
 (define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
   (lambda () (rainbow-mode 1)))
-
 (my-global-rainbow-mode 1)
+
+;; Enable enwrapping highlight
+(show-paren-mode 1)
 
