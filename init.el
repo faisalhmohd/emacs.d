@@ -14,7 +14,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode ac-php))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -47,7 +47,7 @@
  '(fci-rule-color "#424242")
  '(package-selected-packages
    (quote
-    (firecode-theme rainbow-mode rainbo-mode rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
+    (ac-php firecode-theme rainbow-mode rainbo-mode rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
  '(projectile-mode t nil (projectile))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -188,3 +188,14 @@
 ;; Enable enwrapping highlight
 (show-paren-mode 1)
 (setq web-mode-enable-current-element-highlight t)
+
+;; Enable PHP support using Web mode and ac-php
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(defun bs-php-mode-hook ()
+  (auto-complete-mode t)                 ;; «
+  (require 'ac-php)                      ;; «
+  (setq ac-sources  '(ac-source-php ))   ;; «
+  (yas-global-mode 1)                    ;; «
+  (setq indent-tabs-mode nil)
+  (setq php-template-compatibility nil)
+  (setq c-basic-offset 2))
