@@ -199,3 +199,6 @@
   (setq indent-tabs-mode nil)
   (setq php-template-compatibility nil)
   (setq c-basic-offset 2))
+
+;; Commenting shortcut
+(global-set-key (kbd "C-x C-/") 'comment-region)
