@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Function ES6
+# key: fn6
+# --
+($1) => {
+     $2
+}

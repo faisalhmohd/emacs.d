@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Function ES5
+# key: fn5
+# --
+function $1($2) {
+	  $3
+}
