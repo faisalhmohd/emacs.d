@@ -76,7 +76,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(linum ((t (:background "#2f2f2f" :foreground "#fdfdfd")))))
+ '(default ((t (:background "#2f2f2f" :foreground "#fdfdfd")))))
 
 ;; Turning off Alarm Bell
 (setq ring-bell-function 'ignore)
@@ -202,3 +202,5 @@
 
 ;; Commenting shortcut
 (global-set-key (kbd "C-x C-/") 'comment-region)
+
+
