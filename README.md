@@ -6,6 +6,7 @@ This repo contains the source code to my Emacs configuration.
 
 1. `git clone` this repo to your `~/.emacs.d/` directory
 2. Start Emacs and let it set up itself
+3. Run `M-x all-the-icons-install-fonts` to install neotree icons
 
 ## Adding new packages
 

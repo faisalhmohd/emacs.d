@@ -1,4 +1,5 @@
-
+(when (string= system-type "darwin")       
+  (setq dired-use-ls-dired nil))
 
 ;; Setting package repositories
 (defvar gnu '("gnu" . "https://elpa.gnu.org/packages/"))
@@ -14,7 +15,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-ubiquitous smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode ac-php))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-completing-read+ smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode ac-php editorconfig))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -47,7 +48,7 @@
  '(fci-rule-color "#424242")
  '(package-selected-packages
    (quote
-    (ac-php firecode-theme rainbow-mode rainbo-mode rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
+    (editorconfig ac-php firecode-theme rainbow-mode rainbo-mode rainbow-delimiters all-the-icons auto-complete autocomplete autocompletee ac-js2 markdown-mode smex ido-ubiquitous projectile color-theme-sanityinc-tomorrow neotree web-mode use-package)))
  '(projectile-mode t nil (projectile))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -172,13 +173,14 @@
 ;; Enable Rainbow Delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-;; Adding all-the-icons
-(require 'all-the-icons)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-
 ;; Always display neotree and hidden files
 (setq-default neo-show-hidden-files t)
 (neotree-toggle)
+(global-set-key [f8] 'neotree-toggle)
+
+;; Adding all-the-icons
+(require 'all-the-icons)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;; Enable Rainbow mode globally
 (define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
@@ -203,4 +205,4 @@
 ;; Commenting shortcut
 (global-set-key (kbd "C-x C-/") 'comment-region)
 
-
+;; Editorconfig
