@@ -15,7 +15,7 @@
 
 ;; Packages used
 ;; Add your package here then execute eval-buffer
-(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-completing-read+ smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode ac-php editorconfig))
+(setq package-list `(neotree web-mode color-theme-sanityinc-tomorrow projectile ido-completing-read+ smex markdown-mode ac-js2 auto-complete all-the-icons rainbow-delimiters rainbow-mode ac-php editorconfig ansible))
 
 ;; Fetch available packages
 (unless package-archive-contents
@@ -205,4 +205,4 @@
 ;; Commenting shortcut
 (global-set-key (kbd "C-x C-/") 'comment-region)
 
-;; Editorconfig
+(add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
