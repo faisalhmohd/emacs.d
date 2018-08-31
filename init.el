@@ -40,7 +40,7 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#424242"))
+   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#141414"))
  '(custom-enabled-themes (quote (firecode)))
  '(custom-safe-themes
    (quote
@@ -77,7 +77,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "#2f2f2f" :foreground "#fdfdfd")))))
+ '(default ((t (:background "#141414" :foreground "#fdfdfd")))))
 
 ;; Turning off Alarm Bell
 (setq ring-bell-function 'ignore)
@@ -194,15 +194,18 @@
 ;; Enable PHP support using Web mode and ac-php
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (defun bs-php-mode-hook ()
-  (auto-complete-mode t)                 ;; «
-  (require 'ac-php)                      ;; «
-  (setq ac-sources  '(ac-source-php ))   ;; «
-  (yas-global-mode 1)                    ;; «
-  (setq indent-tabs-mode nil)
+  (auto-complete-mode t)
+  (require 'ac-php)
+  (setq ac-sources  '(ac-source-php ))
+  (yas-global-mode 1)
   (setq php-template-compatibility nil)
   (setq c-basic-offset 2))
 
 ;; Commenting shortcut
 (global-set-key (kbd "C-x C-/") 'comment-region)
 
+;; Add Ansible YAML Support
 (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+
+;; Replace tabs with spaces
+(setq-default indent-tabs-mode nil)
